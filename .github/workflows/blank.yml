@@ -23,5 +23,5 @@ jobs:
         run: exit 1  # simulate failure
 
       - name: Always run this step
-        if: ${{ always() }}
+        if: success() || failure()
         run: echo "I always run, even if previous failed."
